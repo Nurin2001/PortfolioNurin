@@ -24,8 +24,21 @@ header {
 }
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    
+    justify-content: space-around;
 }
-.navbar:hover {
-
+.navlink {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0;
+    padding: 10px 20px; /* Adjust padding for each item */
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
 }
