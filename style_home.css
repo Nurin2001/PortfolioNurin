@@ -17,6 +17,7 @@
     color: #136A6A;
     z-index: 500;
     padding-top: 200px;
+    padding-right: 500px;
 }
 .name {
     font-size: 30px;
@@ -51,12 +52,6 @@
     padding-bottom: 25px;
     border-radius: 20px;
 }
-.profilePic {
-    background-color: aliceblue;
-    margin: 0;
-    padding: 0;
-    padding-left: 300px;
-}
 #circle-first {
     position: absolute;
     width:400px;
@@ -66,4 +61,13 @@
 }
 #rectangle-first {
     position: absolute;
+    bottom: -150px;
+    right:-300px
+}
+#profile-pic {
+    position: absolute;
+    width: auto;
+    height: 400px;
+    left: 897px;
+    top: calc(50% - 505px/2 + 43.5px);
 }

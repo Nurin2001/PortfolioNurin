@@ -3,9 +3,11 @@
     src: url('/fonts/JuliusSansOne-Regular.ttf') format('truetype');
 }
 body {
-    background-color: #FCBC70;
+    height: 100vh;
+    background: linear-gradient(to top, #E5BED3, #FCBC70);
     font-family: 'MyFont', Verdana;
     margin: 0;
+    overflow-x: hidden;
 }
 .header_ {
     top: 0;
