@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/JuliusSansOne-Regular.ttf') format('truetype');
+}
+.bodyHome {
+    height: 100vh;
+    margin: 0;
+}
+.TopPage {
+    display: flex;
+}
+.texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 80px;
+    color: #136A6A;
+    z-index: 500;
+    padding-top: 200px;
+}
+.name {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+.graduate {
+    font-size: 70px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.magic {
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+#linkedin-img {
+    padding-right: 40px;
+}
+#email-img {
+    padding-right: 40px;
+}
+.dwResume {
+    width: fit-content;
+}
+.dwResumeBtn {
+    background-color: #136A6A;
+    font-family: 'MyFont', Verdana;
+    color: white;
+    font-size: 18px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+}
+.profilePic {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    padding-left: 300px;
+}
+#circle-first {
+    position: absolute;
+    width:400px;
+    height: 400px;
+    left: 663px;
+    top: 80px;
+}
+#rectangle-first {
+    position: absolute;
+}

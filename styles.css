@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/JuliusSansOne-Regular.ttf') format('truetype');
+}
+body {
+    background-color: #FCBC70;
+    font-family: 'MyFont', Verdana;
+    margin: 0;
+}
+.header_ {
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 1000;
+}
+header {
+    color: rgb(7, 54, 55);
+    padding: 20px 0px 20px 0px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+.navbar:hover {
+
+}
