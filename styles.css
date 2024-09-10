@@ -46,3 +46,9 @@ nav ul li a {
 nav ul li a:hover {
     color: #136A6A
 }
+footer a em {
+    transition:color 0.3s ease;
+}
+footer a em:hover {
+    color: black;
+}
