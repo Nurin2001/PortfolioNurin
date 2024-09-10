@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyFont';
-    src: url('/fonts/JuliusSansOne-Regular.ttf') format('truetype');
+    src: url('fonts/JuliusSansOne-Regular.ttf') format('truetype');
 }
 body {
     height: 100vh;
