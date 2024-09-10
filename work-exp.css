@@ -1,0 +1,75 @@
+.workSection {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: #136A6A;
+    background-color: #FCBC70;
+}
+.workSection p {
+    font-size: 20px;
+}
+.workTitle {
+    display: flex;
+    justify-content: center;
+}
+.workContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #C1E2E2;
+    border-radius: 20px;
+    padding: 20px;
+    width: 60vw;
+}
+.exactLogo {
+    width: 300px;
+    height: auto;
+}
+.workTexts {
+    display: flex;
+    justify-self: flex-start;
+    flex-direction: column;
+    padding: 10px 100px 10px 100px;
+}
+.workTexts p {
+    font-weight: bold;
+    text-align: justify; 
+    margin-top: 0; 
+    line-height: 1.5;
+}
+.feedbackDiv h4 {
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+.rectangleThird {
+    animation:rectangleRotate 15s ease infinite;
+}
+.triangleThird {
+    animation:triangleRotate 10s ease-in-out infinite;
+}
+.feedbackDiv img {
+    transition: transform 0.3s ease;
+}
+.feedbackDiv img:hover {
+    transform: scale(1.2);
+}
+@keyframes rectangleRotate {
+    from {
+        transform:rotate(0deg)
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+@keyframes triangleRotate {
+    0% {
+        transform:rotate(0deg)
+    }
+    50% {
+        transform: rotate(60deg);
+    }
+    100% {
+        transform:rotate(0deg);
+    }
+}
