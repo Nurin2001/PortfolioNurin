@@ -63,6 +63,10 @@
     box-shadow: 10px 10px 30px #f49aca;
     line-height: 1.5;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.dwResumeBtn:hover {
+    transform: scale(1.1);
 }
 #circle-first {
     position: absolute;
