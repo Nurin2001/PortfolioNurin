@@ -12,7 +12,7 @@
                 <nav>
                     <ul class="navlink">
                         <li><a href="#education-page">Education</a></li>
-                        <li><a href="">Work Experience</a></li>
+                        <li><a href="#work-exp-page">Work Experience</a></li>
                         <li><a href="">Projects</a></li>
                         <li><a href="">Activities</a></li>
                     </ul>
@@ -23,7 +23,7 @@
     <body>
         <div id="top-page" style="height: 100vh;"></div>
         <div id="education-page"></div>
-        
+        <div id="work-exp-page" ></div>
         <script>
             fetch('home.html')
                 .then(response => response.text())
@@ -36,6 +36,13 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('education-page').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+            
+            fetch('workExp.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('work-exp-page').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading file:', error));
         </script>
