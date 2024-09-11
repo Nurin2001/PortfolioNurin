@@ -52,3 +52,18 @@ footer a em {
 footer a em:hover {
     color: black;
 }
+.footerDiv div h4{
+    white-space: nowrap; /*prevents the text from breaking into multiple lines*/
+    overflow: hidden; /*hide test until revealed by animation*/
+    border-right: 2px solid black; /*simulates typing cursor*/
+    width: 0; /*starts from 0*/
+    animation: typing 3.5s steps(21, end) infinite, blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0;}
+    to { width: 15%;}
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent;}
+    50% { border-color: black;}
+}
