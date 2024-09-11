@@ -87,4 +87,42 @@
     left: 950px;
     top: calc(50% - 505px/2 + 43.5px);
 }
-
+@media (min-width: 600px) and (max-width: 1024px) {
+    .bodyHome {
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .TopPage {
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .texts {
+        margin: 0;
+        text-align: center;
+        padding: 0px;
+    }
+    .texts h1 {
+        font-size: 50px;
+        padding: 0px 50px 0px 50px;
+    }
+    .dwResume {
+        width: 100%;
+    }
+    .dwResumeBtn { 
+        width: 225px;
+        padding: 10px;
+    }
+    #circle-first {
+        width: 300px;
+        height: auto;
+        left: -50px;
+        top: 80px;
+    }
+    #profile-pic {
+        left: 225px;
+        top: calc(75% - 505px/2 + 43.5px);
+    }
+}
