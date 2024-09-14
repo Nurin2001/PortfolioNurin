@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <title>Nurin Maisarah</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <title>Nurin Maisarah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div class="header_">
         <header>
             <div class="navbar">
@@ -20,60 +21,18 @@
             </div>
         </header>
     </div>
-    <body>
-        <div id="top-page" style="height: 100vh;"></div>
-        <div id="education-page"></div>
-        <div id="work-exp-page" ></div>
-        <script>
-            fetch('home.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('top-page').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
 
-            fetch('education.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('education-page').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
-            
-            fetch('workExp.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('work-exp-page').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
-            
-            function copyEmail() {
-                const tempTextArea = document.createElement("textarea");
-                tempTextArea.value = "maisarahnurin38@gmail.com";
-                document.body.appendChild(tempTextArea);
+    <div id="top-page" style="height: 100vh;"></div>
+    <div id="education-page"></div>
+    <div id="work-exp-page"></div>
 
-                tempTextArea.select();
-                document.execCommand("copy");
-
-                document.body.removeChild(tempTextArea);
-
-                alert("My email is copied to your clipboard");
-            }
-            function downloadResume() {
-                const link = document.createElement('a');
-                link.href = '/downloads/nurin-maisarah-resume.pdf';
-                link.download = 'nurin-maisarah-resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                alert("My resume is downloaded");
-                document.body.removeChild(link);
-            }
-        </script>
-    </body>
     <div class="footerDiv" style="width: 100vw; background-color: antiquewhite; display: flex; flex-direction: column;">
-        <div style="display: flex; justify-content: center;"><h4 style="text-align: center; font-weight: lighter;">
-            More update is coming</h4>
+        <div style="display: flex; justify-content: center;">
+            <h4 id="footer-banner" >
+                More update is coming
+            </h4>
         </div>
-        <footer style=" padding: 20px; background-color: #136A6A; display: flex; flex-direction: column; align-items: center;">
+        <footer style="padding: 20px; background-color: #136A6A; display: flex; flex-direction: column; align-items: center;">
             <h3 style="text-align: center; font-weight: lighter; color: white; margin-bottom: 5px; margin-top: 0;">
                 "Konfiden itu penting"
             </h3>
@@ -82,4 +41,69 @@
             </a>
         </footer>
     </div>
+
+    <script>
+        // Load external HTML content
+        fetch('home.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('top-page').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading file:', error));
+
+        fetch('education.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('education-page').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading file:', error));
+        
+        fetch('workExp.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('work-exp-page').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading file:', error));
+
+        // Copy email to clipboard
+        function copyEmail() {
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = "maisarahnurin38@gmail.com";
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(tempTextArea);
+
+            alert("My email is copied to your clipboard");
+        }
+
+        // Download resume
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = '/downloads/nurin-maisarah-resume.pdf';
+            link.download = 'nurin-maisarah-resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            alert("My resume is downloaded");
+            document.body.removeChild(link);
+        }
+
+        // Animation for footer-banner
+        window.onload = function() {
+            const footerBanner = document.getElementById('footer-banner');
+            const bannerLength = footerBanner.getBoundingClientRect().width;
+
+            footerBanner.animate([
+                { width: '0' },
+                { width: `${bannerLength}px` }
+            ], {
+                duration: 4000,
+                easing: 'steps(21, start)',
+                iterations: Infinity
+            });
+        };
+    </script>
+</body>
 </html>
