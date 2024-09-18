@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Nurin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles2.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <h4>Nurinrin.rah</h4>
+            <ul class="navlinks" id="menulist">
+                <li><a href="">Education</a></li>
+                <li><a href="">Work Experience</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Activities</a></li>
+            </ul>
+            <div class="menuIcon">
+                <img id="menu-icon" onclick="toggleMenu()" src="images/button/menu_icon.svg">
+            </div>
+        </nav>
+        <section class="container">
+            <div class="containerIntro">
+                <div class="intro">
+                     <h2>Nurin Maisarah</h2>
+                     <h1>Software Engineer Graduate</h1>
+                     <p>Nice to meet you</p>
+                 </div>
+                 <div class="socials">
+                     <a href="https://www.linkedin.com/in/nurinmaisarah-mohdamir/" target="_blank"><img id="linkedin-img" src="images/social/Linkedin.svg" alt="My LinkedIn" 
+                         title="Click to see my LinkedIn"/></a>
+                     <a href="#" onclick="copyEmail()"><img id="email-img" src="images/social/Mail.svg" alt="My Email" 
+                         title="Click to copy my email address"/></a>
+                     <a href="https://wa.link/wqf804" target="_blank"><img id="message-img" src="images/social/message.svg" 
+                         alt="My WhatsApp" title="Click to WhatsApp me"/></a>
+                 </div>
+                 <div class="dwResume">
+                     <button class="dwResumeBtn" onclick="downloadResume()">Download My Resume</button>
+                 </div>
+            </div>
+            <div class="profilePic">
+                <img id="profile-pic" src="images/dp.jpeg" alt="profile pic" />
+            </div>
+            <img class="circleFirst" src="images/bg/circle_first_pg.svg">
+            <div class="rectFirst"><img class="rectFirstImg" src="images/bg/rectangle_blur_first_page.svg"></div>
+        </section>
+        <script>
+            window.addEventListener('resize', function() {
+                const menuIcon = document.getElementById('menu-icon');
+                const style = window.getComputedStyle(menuIcon);
+
+                let menulist = document.getElementById('menulist');
+                    
+                if(style.display === 'block')
+                    menulist.style.maxHeight = "0px";
+                else 
+                    menulist.style.maxHeight = "100%";
+
+                }
+            );
+
+            function toggleMenu() {
+                if(menulist.style.maxHeight == "0px")
+                    menulist.style.maxHeight = "300px"
+                else
+                    menulist.style.maxHeight = "0px"
+            }
+
+            // Copy email to clipboard
+            function copyEmail() {
+                const tempTextArea = document.createElement("textarea");
+                tempTextArea.value = "maisarahnurin38@gmail.com";
+                document.body.appendChild(tempTextArea);
+
+                tempTextArea.select();
+                document.execCommand("copy");
+
+                document.body.removeChild(tempTextArea);
+
+                alert("My email is copied to your clipboard");
+            }
+
+            // Download resume
+            function downloadResume() {
+                const link = document.createElement('a');
+                link.href = 'downloads/nurin-maisarah-resume.pdf';
+                link.download = 'nurin-maisarah-resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                alert("My resume is downloaded");
+                document.body.removeChild(link);
+            }
+        </script>
+    </body>
+</html>
