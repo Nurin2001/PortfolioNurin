@@ -253,7 +253,7 @@ html, body {
     }
     .profilePic img {
         position: relative;
-        max-width: 400px;
+        max-width: 350px;
     }
     .circleFirst {
         display: absolute;
@@ -272,5 +272,18 @@ html, body {
     .rectFirstImg {
         position: relative;
         right: 10px;
+    }
+}
+@media screen and (min-width:1440px) {
+    .containerIntro {
+        padding-left: 235px;
+        padding-right: 50px;
+    }
+    .profilePic {
+    padding: 20px 250px 10px 0px;
+    }
+    .circleFirst {
+        left: 50vw;
+        top:60px;
     }
 }

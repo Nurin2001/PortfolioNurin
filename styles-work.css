@@ -1,0 +1,192 @@
+.workSection {
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: #136A6A;
+    background:linear-gradient(to bottom, #FCBC70, #E5BED3);
+    width: 100vw;
+    height: fit-content;
+}
+.workSection .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.workSection p {
+    font-size: 20px;
+}
+.workTitle {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+}
+.workContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #C1E2E2;
+    border-radius: 20px;
+    padding: 20px;
+}
+.exactLogo {
+    max-width: 300px;
+    height: auto;
+}
+.workTexts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+}
+.workTexts h4 {
+    font-size: 15px;
+}
+.desc, .whatIdo {
+    /* font-weight: bold;
+    text-align: justify; 
+    margin-top: 0; 
+    line-height: 1.5; */
+    display: none;
+}
+.companyName {
+    display: block;
+    padding-bottom: 10px;
+}
+#feedbackHead {
+    padding: 20px 0px 10px 0px;
+}
+.feedbackDiv {
+    position: relative;
+    display:flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.imgFeed {
+    max-width: 300px;
+}
+.imgFeed h4 {
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+.imgFeed img {
+    width: 100%;
+    padding-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+.imgFeed img:hover {
+    transform: scale(1.2);
+}
+.backgroundImgWork {
+    display: none;
+    /* animation:rectangleRotate 15s ease infinite; */
+}
+/* .triangleThird {
+    animation:triangleRotate 10s ease-in-out infinite;
+} */
+ @media screen and (min-width:750px) {
+    .workSection {
+        height: fit-content;
+    }
+    .workSection .container {
+        padding: 20px;
+        height: fit-content;
+    }
+    .workContainer {
+        width: 100vw;
+        max-width: 600px;
+        padding: 1s0px;
+    }
+    .backgroundImgWork {
+        display: block;
+        position: absolute;
+    }
+    #rectWork {
+        left: -320px;
+        animation: rectangleRotate ease-in-out 15s infinite;
+    }
+    #triWork {
+        right: -150px;
+        top:1200px;
+        animation: triangleRotate ease-in-out 15s infinite;
+    }
+ }
+ @media screen and (min-width:1024px) {
+    #work-page {
+        height: 100vh;
+    }
+    #rectWork {
+        left: -80px;
+        top:100px;
+        animation: rectangleRotate ease-in-out 15s infinite;
+        max-width: 400px;
+    }
+    #triWork {
+        right: -80px;
+        top:1100px;
+        animation: triangleRotate ease-in-out 15s infinite;
+    }
+ }
+ @media screen and (min-width:1440px) {
+    .workContainer {
+        width: 100vw;
+        max-width: 80vw;
+    }
+    .desc, .whatIdo {
+        display: block;
+    }
+    .whatIdo {
+        padding-top: 10px;
+    }
+    .desc {
+        text-align: justify;
+        padding-bottom: 5px;
+    }
+    .feedbackDiv {
+        flex-direction: row; 
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+    }
+    #feedbackDesc {
+        display: block;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    #rectWork {
+        left: -180px;
+        top:100px;
+        animation: rectangleRotate ease-in-out 15s infinite;
+        max-width: 400px;
+    }
+    #triWork {
+        right: -80px;
+        top:500px;
+        animation: triangleRotate ease-in-out 15s infinite;
+    }
+
+ }
+@keyframes rectangleRotate {
+    0% {
+        transform:rotate(0deg)
+    }
+    50% {
+        transform: rotate(60deg);
+    }
+    100% {
+        transform:rotate(0deg);
+    }
+}
+@keyframes triangleRotate {
+    from {
+        transform:rotate(0deg)
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
