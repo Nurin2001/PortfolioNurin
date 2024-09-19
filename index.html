@@ -1,109 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>Nurin Maisarah</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="header_">
-        <header>
-            <div class="navbar">
-                <nav>
-                    <ul class="navlink">
-                        <li><a href="#education-page">Education</a></li>
-                        <li><a href="#work-exp-page">Work Experience</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Activities</a></li>
-                    </ul>
-                </nav>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Nurin Maisarah</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles-edu.css">
+        <link rel="stylesheet" href="styles-work.css">
+        <link rel="stylesheet" href="styles-project.css">
+        <style>
+            footer {
+                background-color: #136A6A;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0 10px 0;
+            }
+            footer h3 {
+                color: white;
+                font-weight: lighter;
+            }
+            footer a em {
+                color: white;
+                transition:color 0.3s ease;
+            }
+            footer a em:hover {
+                color: black;
+            }
+            #footer-banner{
+                text-align: center; 
+                font-weight: lighter;
+                white-space: nowrap; /*prevents the text from breaking into multiple lines*/
+                border-right: 2px solid black;
+                overflow: hidden; /*hide test until revealed by animation*/
+                width: fit-content; /*starts from 0*/
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <h4>Nurinrin.rah</h4>
+            <ul class="navlinks" id="menulist">
+                <li><a href="#edu-page">Education</a></li>
+                <li><a href="#work-page">Work Experience</a></li>
+                <li><a href="#project-page">Projects</a></li>
+                <li><a href="">Activities</a></li>
+            </ul>
+            <div class="menuIcon">
+                <img id="menu-icon" onclick="toggleMenu()" src="images/button/menu_icon.svg">
             </div>
-        </header>
-    </div>
-
-    <div id="top-page" style="height: 100vh;"></div>
-    <div id="education-page"></div>
-    <div id="work-exp-page"></div>
-
-    <div class="footerDiv" style="width: 100vw; background-color: antiquewhite; display: flex; flex-direction: column;">
-        <div style="display: flex; justify-content: center;">
-            <h4 id="footer-banner" >
-                More update is coming
-            </h4>
+        </nav>
+        <div id="top-page" style="height: fit-content;">
         </div>
-        <footer style="padding: 20px; background-color: #136A6A; display: flex; flex-direction: column; align-items: center;">
-            <h3 style="text-align: center; font-weight: lighter; color: white; margin-bottom: 5px; margin-top: 0;">
-                "Konfiden itu penting"
-            </h3>
-            <a href="#" style="text-decoration: none; color: white; margin-top: 0;">
-                <em>Back to Top</em>
-            </a>
-        </footer>
-    </div>
+        <div id="edu-page">
+            <section class="educationSection">
+                <div class="containerEdu">
+                    <br><br>
+                    <h3>Education</h3>
+                    <br><br>
+                    <div class="edu">
+                        <img src="images/edu/UKM.png" alt="UKM logo"/> 
 
-    <script>
-        // Load external HTML content
-        fetch('home.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('top-page').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading file:', error));
-
-        fetch('education.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('education-page').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading file:', error));
+                        <div class="texts">
+                            <p>Graduation Year</p>
+                            <h2>2024</h2>
+                            <p>Course</p>
+                            <h2>Software Engineering (Multimedia System Development)</h2>
+                            <p>CGPA</p>
+                            <h2 class="cgpa">3.78</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="edu">
+                        <img src="images/edu/uitm.png" alt="UiTM logo"/>
+    
+                        <div class="texts">
+                            <p>Graduation Year</p>
+                            <h2>2020</h2>
+                            <p>Course</p>
+                            <h2>Foundation in Engineering</h2>
+                            <p>CGPA</p>
+                            <h2 class="cgpa">3.93</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="edu">
+                        <img src="images/edu/hanyang.png" alt="UKM logo"/>
+    
+                        <div class="texts">
+                            <h2>Exchange Student Progamme to
+                                Hanyang ERICA University, 2022
+                            </h2>
+                            <p>Duration</p>
+                            <h2 class="duration">4 Months</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <img class="circleSecond" src="images/bg/circle_blur_second_page.svg" alt="circle blur" />
+                <img class="triangleSecond" src="images/bg/triangle_second_pg.svg" alt="triangle"/>
+            </section>
+        </div>
+        <div id="work-page">
+            <section class="workSection">
+                <div class="container">
+                    <h3 class="workTitle">Work Experience</h3>
+                    <br>
+                    <div class="workContainer">
+                        <img class="exactLogo" src="images/work/exact.png" alt="exact logo" />
         
-        fetch('workExp.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('work-exp-page').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading file:', error));
+                        <div class="workTexts">
+                            <h4>Company Name</h4>
+                            <p class="companyName">Exact Asia Development Sdn Bhd</p>
+                            <h4>Position</h4>
+                            <p> Software Engineer, Intern (6 months)</p>
+                            <h4 class="whatIdo">What did I do?</h4>
+                            <p class="desc">
+                                During my internship, one of my key responsibilities was migrating 16 projects from .NET 
+                                Framework 4.7.2 to .NET Standard 2.0, which was no small task. Ensuring every project maintained 
+                                its functionality and performance was a challenge I embraced, as I also converted 10 projects to 
+                                fit Exact's new system design. 
+                            <p class="desc">
+                                Along the way, I contributed to resolving a few customer-reported 
+                                bugs, which not only improved the deliverables but also helped streamline our team's efficiency. 
+                                Being part of a dynamic scrum team of seven members, I immersed myself in Agile ceremonies, 
+                                using Azure DevOps to keep tasks on track and ensure continuous integration flowed smoothly.
+                            </p>
+                            <p class="desc">
+                                One of the most rewarding aspects of my work was collaborating with our Product Owner from the Netherlands, 
+                                where I learned the importance of clear communication and attention to detail to meet <em>exacting</em> user 
+                                story requirements and deliver them on time.
+                            </p>
+                            <h4 id="feedbackHead">Feedback from Teammates</h4>
+                            <p id="feedbackDesc" class="desc">
+                                Here are some feedbacks on my performance from my teammates during my final Sprint Retrospective at Exact ADC.
+                            </p>
+                            <div class="feedbackDiv">
+                                <div class="imgFeed">
+                                    <h4>Senior Software Engineer,<br>Mei Pheng Lau</h4>
+                                    <img class="feedbackImg" src="images/feedback/mei_pheng.jpeg" alt="mei pheng feedback" />
+                                </div>
+                                <div class="imgFeed">
+                                    <h4>Software Engineer,<br>Jayson Chan Kar Yong</h4>
+                                    <img class="feedbackImg" src="images/feedback/jayson.jpeg" alt="mei pheng feedback" />
+                                </div>
+                                <div class="imgFeed">
+                                    <h4>Senior Quality Engineer,<br>Digi Abraham</h4>
+                                    <img class="feedbackImg" src="images/feedback/digi.jpeg" alt="mei pheng feedback" />
+                                </div>
+                            </div>
+                            <h4>Note: EOL (Exact Online) is one of Exact's product</h4>
+                        </div>
+                    </div>
+                </div>
+                <img id="triWork" class="backgroundImgWork" src="images/bg/triangle_third_page.svg" alt="triangle" />
+                <img id="rectWork" class="backgroundImgWork" src="images/bg/rectangle_third_page.svg" alt="rectangle"/>
+            </section>
+        </div>
+        <div id="project-page">
+            <section>
+                <br><br>
+                <h3>Projects</h3>
+                <br><br>
+                <div class="container">
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/facility_finder.jpg" alt="Facility Finder"/>
+                        </div>
+                        <h4>2024<br>Facility Finder</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/carein.jpg"/>
+                        </div>
+                        <h4>2024<br>CareIn</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/trio.jpg"/>
+                        </div>
+                        <h4>2022<br>Order Up</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img id="zero-one-img" src="images/projects/zero_one.jpg"/>
+                        </div>
+                        <h4>2020<br>ZeroOne</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <div style="display: flex; justify-content: center; padding: 10px 0 10px 0;">
+                <h4 id="footer-banner" >
+                    More update is coming
+                </h4>
+            </div>
+            <footer>
+                <h3>
+                    "Konfiden itu penting"
+                </h3>
+                <a href="#">
+                    <em>Back to Top</em>
+                </a>
+            </footer>
+        </div>
+        <script>
+            // Load external HTML content
+            fetch('home2.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('top-page').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+    
+            window.addEventListener('resize', function() {
+                const menuIcon = document.getElementById('menu-icon');
+                const style = window.getComputedStyle(menuIcon);
 
-        // Copy email to clipboard
-        function copyEmail() {
-            const tempTextArea = document.createElement("textarea");
-            tempTextArea.value = "maisarahnurin38@gmail.com";
-            document.body.appendChild(tempTextArea);
+                let menulist = document.getElementById('menulist');
+                    
+                if(style.display === 'block')
+                    menulist.style.maxHeight = "0px";
+                else
+                    menulist.style.maxHeight = "100%";
+                }
+            );
 
-            tempTextArea.select();
-            document.execCommand("copy");
+            function toggleMenu() {
+                if(menulist.style.maxHeight == "0px")
+                    menulist.style.maxHeight = "300px"
+                else
+                    menulist.style.maxHeight = "0px"
+            }
 
-            document.body.removeChild(tempTextArea);
+            // Copy email to clipboard
+            function copyEmail() {
+                const tempTextArea = document.createElement("textarea");
+                tempTextArea.value = "maisarahnurin38@gmail.com";
+                document.body.appendChild(tempTextArea);
 
-            alert("My email is copied to your clipboard");
-        }
+                tempTextArea.select();
+                document.execCommand("copy");
 
-        // Download resume
-        function downloadResume() {
-            const link = document.createElement('a');
-            link.href = 'downloads/nurin-maisarah-resume.pdf';
-            link.download = 'nurin-maisarah-resume.pdf';
-            document.body.appendChild(link);
-            link.click();
-            alert("My resume is downloaded");
-            document.body.removeChild(link);
-        }
+                document.body.removeChild(tempTextArea);
 
-        // Animation for footer-banner
-        window.onload = function() {
-            const footerBanner = document.getElementById('footer-banner');
-            const bannerLength = footerBanner.getBoundingClientRect().width;
+                alert("My email is copied to your clipboard");
+            }
 
-            footerBanner.animate([
-                { width: '0' },
-                { width: `${bannerLength}px` }
-            ], {
-                duration: 4000,
-                easing: 'steps(21, start)',
-                iterations: Infinity
-            });
-        };
-    </script>
-</body>
+            // Download resume
+            function downloadResume() {
+                const link = document.createElement('a');
+                link.href = 'downloads/nurin-maisarah-resume.pdf';
+                link.download = 'nurin-maisarah-resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                alert("My resume is downloaded");
+                document.body.removeChild(link);
+            }
+
+            // Animation for footer-banner
+            window.onload = function() {
+                const footerBanner = document.getElementById('footer-banner');
+                const bannerLength = footerBanner.getBoundingClientRect().width;
+
+                footerBanner.animate([
+                    { width: '0' },
+                    { width: `${bannerLength}px` }
+                ], {
+                    duration: 4000,
+                    easing: 'steps(21, start)',
+                    iterations: Infinity
+                });
+            };
+        </script>
+    </body>
 </html>

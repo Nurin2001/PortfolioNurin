@@ -46,10 +46,6 @@
     font-size: 15px;
 }
 .desc, .whatIdo {
-    /* font-weight: bold;
-    text-align: justify; 
-    margin-top: 0; 
-    line-height: 1.5; */
     display: none;
 }
 .companyName {
@@ -97,6 +93,9 @@
         padding: 20px;
         height: fit-content;
     }
+    .workTitle {
+        font-size: max(25px);
+    }
     .workContainer {
         width: 100vw;
         max-width: 600px;
@@ -118,7 +117,20 @@
  }
  @media screen and (min-width:1024px) {
     #work-page {
-        height: 100vh;
+        height: fit-content;
+    }
+    .feedbackDiv {
+        position: relative;
+        display:flex; 
+        flex-direction: row;
+        flex-wrap: wrap; 
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        column-gap: 50px;
+    }
+    .imgFeed {
+        max-width: 180px;
     }
     #rectWork {
         left: -80px;

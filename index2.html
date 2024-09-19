@@ -6,6 +6,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles-edu.css">
         <link rel="stylesheet" href="styles-work.css">
+        <link rel="stylesheet" href="styles-project.css">
+        <style>
+            footer {
+                background-color: #136A6A;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0 10px 0;
+            }
+            footer h3 {
+                color: white;
+                font-weight: lighter;
+            }
+            footer a em {
+                color: white;
+                transition:color 0.3s ease;
+            }
+            footer a em:hover {
+                color: black;
+            }
+            #footer-banner{
+                text-align: center; 
+                font-weight: lighter;
+                white-space: nowrap; /*prevents the text from breaking into multiple lines*/
+                border-right: 2px solid black;
+                overflow: hidden; /*hide test until revealed by animation*/
+                width: fit-content; /*starts from 0*/
+                display: inline-block;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar">
@@ -13,7 +46,7 @@
             <ul class="navlinks" id="menulist">
                 <li><a href="#edu-page">Education</a></li>
                 <li><a href="#work-page">Work Experience</a></li>
-                <li><a href="">Projects</a></li>
+                <li><a href="#project-page">Projects</a></li>
                 <li><a href="">Activities</a></li>
             </ul>
             <div class="menuIcon">
@@ -77,7 +110,7 @@
         <div id="work-page">
             <section class="workSection">
                 <div class="container">
-                    <p class="workTitle">Work Experience</p>
+                    <h3 class="workTitle">Work Experience</h3>
                     <br>
                     <div class="workContainer">
                         <img class="exactLogo" src="images/work/exact.png" alt="exact logo" />
@@ -129,6 +162,55 @@
                 <img id="triWork" class="backgroundImgWork" src="images/bg/triangle_third_page.svg" alt="triangle" />
                 <img id="rectWork" class="backgroundImgWork" src="images/bg/rectangle_third_page.svg" alt="rectangle"/>
             </section>
+        </div>
+        <div id="project-page">
+            <section>
+                <br><br>
+                <h3>Projects</h3>
+                <br><br>
+                <div class="container">
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/facility_finder.jpg" alt="Facility Finder"/>
+                        </div>
+                        <h4>2024<br>Facility Finder</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/carein.jpg"/>
+                        </div>
+                        <h4>2024<br>CareIn</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img src="images/projects/trio.jpg"/>
+                        </div>
+                        <h4>2022<br>Order Up</h4>
+                    </div>
+                    <div class="project">
+                        <div class="projectImg">
+                            <img id="zero-one-img" src="images/projects/zero_one.jpg"/>
+                        </div>
+                        <h4>2020<br>ZeroOne</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <div style="display: flex; justify-content: center; padding: 10px 0 10px 0;">
+                <h4 id="footer-banner" >
+                    More update is coming
+                </h4>
+            </div>
+            <footer>
+                <h3>
+                    "Konfiden itu penting"
+                </h3>
+                <a href="#">
+                    <em>Back to Top</em>
+                </a>
+            </footer>
         </div>
         <script>
             // Load external HTML content
@@ -183,6 +265,21 @@
                 alert("My resume is downloaded");
                 document.body.removeChild(link);
             }
+
+            // Animation for footer-banner
+            window.onload = function() {
+                const footerBanner = document.getElementById('footer-banner');
+                const bannerLength = footerBanner.getBoundingClientRect().width;
+
+                footerBanner.animate([
+                    { width: '0' },
+                    { width: `${bannerLength}px` }
+                ], {
+                    duration: 4000,
+                    easing: 'steps(21, start)',
+                    iterations: Infinity
+                });
+            };
         </script>
     </body>
 </html>
