@@ -1,0 +1,75 @@
+.bodyEdu {
+    margin: 0;
+    padding: 0;
+}
+.educationSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background:linear-gradient(to top, #FCBC70, #E5BED3);
+}
+.containerEdu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    z-index: 500;
+}
+.edu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #FCBC70;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 30px gray;
+    text-align: center;
+    transition: transform ease 0.3s;
+}
+.edu:hover {
+    transform: scale(1.1);
+}
+.edu img {
+    max-width: 100px;
+    max-height: auto;
+}
+.texts {
+    padding: 10px 10px 0px 10px;
+    font-size: 14px;
+}
+.texts h2 {
+    padding-bottom: 10px;
+}
+.triangleSecond, .circleSecond {
+    display: none;
+}
+@media screen and (min-width:750px){
+    .educationSection {
+        position: relative;
+    }
+    .circleSecond {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .triangleSecond {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        animation: rotateTri 10s ease infinite;
+    }
+    @keyframes rotateTri {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+   
+}

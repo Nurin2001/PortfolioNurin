@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <title>Nurin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles2.css">
+        <link rel="stylesheet" href="styles-edu.css">
+        <link rel="stylesheet" href="styles-work.css">
     </head>
-    <body>
+    <body class="bodyEdu">
         <nav class="navbar">
             <h4>Nurinrin.rah</h4>
             <ul class="navlinks" id="menulist">
-                <li><a href="">Education</a></li>
+                <li><a href="#edu-page">Education</a></li>
                 <li><a href="">Work Experience</a></li>
                 <li><a href="">Projects</a></li>
                 <li><a href="">Activities</a></li>
@@ -19,32 +20,132 @@
                 <img id="menu-icon" onclick="toggleMenu()" src="images/button/menu_icon.svg">
             </div>
         </nav>
-        <section class="container">
-            <div class="containerIntro">
-                <div class="intro">
-                     <h2>Nurin Maisarah</h2>
-                     <h1>Software Engineer Graduate</h1>
-                     <p>Nice to meet you</p>
-                 </div>
-                 <div class="socials">
-                     <a href="https://www.linkedin.com/in/nurinmaisarah-mohdamir/" target="_blank"><img id="linkedin-img" src="images/social/Linkedin.svg" alt="My LinkedIn" 
-                         title="Click to see my LinkedIn"/></a>
-                     <a href="#" onclick="copyEmail()"><img id="email-img" src="images/social/Mail.svg" alt="My Email" 
-                         title="Click to copy my email address"/></a>
-                     <a href="https://wa.link/wqf804" target="_blank"><img id="message-img" src="images/social/message.svg" 
-                         alt="My WhatsApp" title="Click to WhatsApp me"/></a>
-                 </div>
-                 <div class="dwResume">
-                     <button class="dwResumeBtn" onclick="downloadResume()">Download My Resume</button>
-                 </div>
-            </div>
-            <div class="profilePic">
-                <img id="profile-pic" src="images/dp.jpeg" alt="profile pic" />
-            </div>
-            <img class="circleFirst" src="images/bg/circle_first_pg.svg">
-            <div class="rectFirst"><img class="rectFirstImg" src="images/bg/rectangle_blur_first_page.svg"></div>
-        </section>
+        <div id="top-page" style="height: fit-content;">
+        </div>
+        <div id="edu-page">
+            <section class="educationSection">
+                <div class="containerEdu">
+                    <br><br>
+                    <h3>Education</h3>
+                    <br><br>
+                    <div class="edu">
+                        <img src="images/edu/UKM.png" alt="UKM logo"/> 
+
+                        <div class="texts">
+                            <p>Graduation Year</p>
+                            <h2>2024</h2>
+                            <p>Course</p>
+                            <h2>Software Engineering (Multimedia System Development)</h2>
+                            <p>CGPA</p>
+                            <h2 class="cgpa">3.78</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="edu">
+                        <img src="images/edu/uitm.png" alt="UiTM logo"/>
+    
+                        <div class="texts">
+                            <p>Graduation Year</p>
+                            <h2>2020</h2>
+                            <p>Course</p>
+                            <h2>Foundation in Engineering</h2>
+                            <p>CGPA</p>
+                            <h2 class="cgpa">3.93</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="edu">
+                        <img src="images/edu/hanyang.png" alt="UKM logo"/>
+    
+                        <div class="texts">
+                            <h2>Exchange Student Progamme to
+                                Hanyang ERICA University, 2022
+                            </h2>
+                            <p>Duration</p>
+                            <h2 class="duration">4 Months</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <img class="circleSecond" src="images/bg/circle_blur_second_page.svg" alt="circle blur" />
+                <img class="triangleSecond" src="images/bg/triangle_second_pg.svg" alt="triangle"/>
+            </section>
+        </div>
+        <div id="work-page">
+            <!-- <section class="workSection">
+                <div class="container">
+                <br>
+                <br>
+                    <p style="text-shadow: 2px 2px 8px #ce8b3a;" class="workTitle">Work Experience</p>
+                    <br>
+                    <div class="workContainer">
+                        <img class="exactLogo" src="images/work/exact.png" alt="exact logo" />
+        
+                        <div class="workTexts">
+                            <h4 style="margin-bottom: 5px; font-weight: lighter;">Company Name</h4>
+                            <p style="margin-top: 0;">Exact Asia Development Sdn Bhd</p>
+                            <h4 style="margin-bottom: 5px; margin-top:5px; font-weight: lighter;">What did I do?</h4>
+                            <p>
+                                During my internship, one of my key responsibilities was migrating 16 projects from .NET 
+                                Framework 4.7.2 to .NET Standard 2.0, which was no small task. Ensuring every project maintained 
+                                its functionality and performance was a challenge I embraced, as I also converted 10 projects to 
+                                fit Exact's new system design. 
+                            <p>
+                                Along the way, I contributed to resolving a few customer-reported 
+                                bugs, which not only improved the deliverables but also helped streamline our team's efficiency. 
+                                Being part of a dynamic scrum team of seven members, I immersed myself in Agile ceremonies, 
+                                using Azure DevOps to keep tasks on track and ensure continuous integration flowed smoothly.
+                            </p>
+                            <p>
+                                One of the most rewarding aspects of my work was collaborating with our Product Owner from the Netherlands, 
+                                where I learned the importance of clear communication and attention to detail to meet <em>exacting</em> user 
+                                story requirements and deliver them on time.
+                            </p>
+                            <h4 style="font-weight:lighter; text-align: center;">Feedback</h4>
+                            <p>
+                                Here are some feedbacks on my performance from my teammates during my final Sprint Retrospective at Exact ADC.
+                            </p>
+                            <div class="feedbackDiv" style="display:flex; flex-direction: row; align-self: center;">
+                                <div style="width: 250px; padding-right: 20px;">
+                                    <h4>Senior Software Engineer, Mei Pheng Lau</h4>
+                                    <img style="width: 100%;" src="images/feedback/mei_pheng.jpeg" alt="mei pheng feedback" />
+                                </div>
+                                <div style="width: 250px; padding-right: 20px;">
+                                    <h4>Software Engineer, Jayson Chan Kar Yong</h4>
+                                    <img style="width: 100%;" src="images/feedback/jayson.jpeg" alt="mei pheng feedback" />
+                                </div>
+                                <div style="width: 250px;">
+                                    <h4>Senior Quality Engineer, Digi Abraham</h4>
+                                    <img style="width: 100%;" src="images/feedback/digi.jpeg" alt="mei pheng feedback" />
+                                </div>
+                            </div>
+                            <h4 style="font-weight: lighter; margin-bottom: 0;">Note: EOL (Exact Online) is one of Exact's product</h4>
+                        </div>
+                    </div>
+                </div>
+                <img class="triangleThird" src="images/bg/triangle_third_page.svg" alt="triangle"
+                style="
+                position: absolute;
+                left: -50px;
+                top:2500px" />
+                <img class="rectangleThird" src="images/bg/rectangle_third_page.svg" alt="rectangle"
+                style="
+                position: absolute;
+                right: -200px;" />
+            </section> -->
+        </div>
         <script>
+            // Load external HTML content
+            fetch('home2.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('top-page').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+    
             window.addEventListener('resize', function() {
                 const menuIcon = document.getElementById('menu-icon');
                 const style = window.getComputedStyle(menuIcon);
