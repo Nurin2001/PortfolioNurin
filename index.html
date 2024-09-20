@@ -34,9 +34,48 @@
                 font-weight: lighter;
                 white-space: nowrap; /*prevents the text from breaking into multiple lines*/
                 border-right: 2px solid black;
-                overflow: hidden; /*hide test until revealed by animation*/
-                width: fit-content; /*starts from 0*/
+                overflow: hidden;/*  hide test until revealed by animation */
+                width: fit-content;
                 display: inline-block;
+                animation: typing 3.5s steps(21, end) infinite, blink-caret 0.75s step-end infinite;
+            }
+            @keyframes typing {
+                from { width: 0;}
+                to { width: 65%;}
+            }
+            @keyframes blink-caret {
+                from, to { border-color: transparent;}
+                50% { border-color: black;}
+            }
+            @media screen and (min-width:340px) {
+                @keyframes typing {
+                    from { width: 0;}
+                    to { width: 62%;}
+                }
+            }
+            @media screen and (min-width:400px) {
+                @keyframes typing {
+                    from { width: 0;}
+                    to { width: 53%;}
+                }
+            }
+            @media screen and (min-width:750px) {
+                @keyframes typing {
+                    from { width: 0;}
+                    to { width: 30%;}
+                }
+            }
+            @media screen and (min-width:1024px) {
+                @keyframes typing {
+                    from { width: 0;}
+                    to { width: 22%;}
+                }
+            }
+            @media screen and (min-width:1440px) {
+                @keyframes typing {
+                    from { width: 0;}
+                    to { width: 15%;}
+                }
             }
         </style>
     </head>
@@ -196,7 +235,6 @@
                 </div>
             </section>
         </div>
-        
         <div>
             <div style="display: flex; justify-content: center; padding: 10px 0 10px 0;">
                 <h4 id="footer-banner" >
@@ -266,20 +304,44 @@
                 document.body.removeChild(link);
             }
 
-            // Animation for footer-banner
-            window.onload = function() {
-                const footerBanner = document.getElementById('footer-banner');
-                const bannerLength = footerBanner.getBoundingClientRect().width;
+            // Define the media query for min-width: 1440px
+            // const min1440px = window.matchMedia('(min-width: 1440px)');
 
-                footerBanner.animate([
-                    { width: '0' },
-                    { width: `${bannerLength}px` }
-                ], {
-                    duration: 4000,
-                    easing: 'steps(21, start)',
-                    iterations: Infinity
-                });
-            };
+            // // Function to handle the media query change
+            // function handleMediaQueryChange(e) {
+            // if (e.matches) {
+            //     // Screen width is at least 1440px
+            //     console.log('Screen width is at least 1440px');
+            //     // You can add your custom behavior here
+            // } else {
+            //     // Screen width is less than 1440px
+            //     console.log('Screen width is less than 1440px');
+            //     // You can add your custom behavior here
+            // }
+            // }
+
+            // // Attach the event listener to the media query
+            // mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+            // // Call the function initially to check the current state
+            // handleMediaQueryChange(min1440px);
+
+            // window.onload = footerBannerAnimation();
+
+            // Animation for footer-banner
+            // function footerBannerAnimation(media) {
+            //     const footerBanner = document.getElementById('footer-banner');
+            //     const bannerLength = footerBanner.getBoundingClientRect().width;
+
+            //     footerBanner.animate([
+            //         { width: '0' },
+            //         { width: `${bannerLength}px` }
+            //     ], {
+            //         duration: 4000,
+            //         easing: 'steps(21, start)',
+            //         iterations: Infinity
+            //     });
+            // };
         </script>
     </body>
 </html>
