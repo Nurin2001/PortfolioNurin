@@ -75,16 +75,9 @@
     padding-bottom: 15px;
     transition: transform 0.3s ease;
 }
-.imgFeed img:hover {
-    transform: scale(1.2);
-}
 .backgroundImgWork {
     display: none;
-    /* animation:rectangleRotate 15s ease infinite; */
 }
-/* .triangleThird {
-    animation:triangleRotate 10s ease-in-out infinite;
-} */
  @media screen and (min-width:750px) {
     .workSection {
         height: fit-content;
@@ -100,6 +93,9 @@
         width: 100vw;
         max-width: 600px;
         padding: 1s0px;
+    }
+    .imgFeed img:hover {
+        transform: none;
     }
     .backgroundImgWork {
         display: block;
@@ -132,6 +128,9 @@
     .imgFeed {
         max-width: 180px;
     }
+    .imgFeed img:hover {
+        transform: scale(1.2);
+    }
     #rectWork {
         left: -80px;
         top:100px;
@@ -163,12 +162,15 @@
         flex-direction: row; 
         align-items: flex-start;
         justify-content: center;
-        gap: 10px;
+        gap: 80px;
     }
     #feedbackDesc {
         display: block;
         padding-bottom: 10px;
         text-align: center;
+    }
+    .imgFeed img:hover {
+        transform: scale(1.5);
     }
     #rectWork {
         left: -180px;

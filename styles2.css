@@ -104,6 +104,9 @@ html, body {
     justify-content: center;
 }
 .dwResumeBtn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
     width: 100%;
     white-space: nowrap;
     color: aliceblue;
