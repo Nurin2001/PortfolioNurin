@@ -55,6 +55,7 @@
     font-weight: 20px;
     margin-top: 10px;
     overflow: hidden; /* Prevents overflow */
+    cursor: pointer;
 }
 span {
     position: absolute;
