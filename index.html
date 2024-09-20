@@ -131,12 +131,13 @@
                     <div class="edu">
                         <img src="images/edu/hanyang.png" alt="UKM logo"/>
     
-                        <div class="texts">
-                            <h2>Exchange Student Progamme to
+                        <div id="hanyang-texts" class="texts">
+                            <h2>Exchange Student Programme to
                                 Hanyang ERICA University, 2022
                             </h2>
                             <p>Duration</p>
                             <h2 class="duration">4 Months</h2>
+                            <a id="hanyang-transcript" >View My Transcript<br>& Certificate</a>
                         </div>
                     </div>
                     <br>
@@ -161,7 +162,7 @@
                             <p> Software Engineer, Intern (6 months)</p>
                             <h4 class="whatIdo">What did I do?</h4>
                             <p class="desc">
-                                During my internship, one of my key responsibilities was migrating 16 projects from .NET 
+                                During my internship, one of my key responsibilities was migrating projects from .NET 
                                 Framework 4.7.2 to .NET Standard 2.0, which was no small task. Ensuring every project maintained 
                                 its functionality and performance was a challenge I embraced, as I also converted 10 projects to 
                                 fit Exact's new system design. 
@@ -182,16 +183,16 @@
                             </p>
                             <div class="feedbackDiv">
                                 <div class="imgFeed">
+                                    <h4>Senior Quality Engineer,<br>Digi Abraham</h4>
+                                    <img class="feedbackImg" src="images/feedback/digi.jpeg" alt="mei pheng feedback" />
+                                </div>
+                                <div class="imgFeed">
                                     <h4>Senior Software Engineer,<br>Mei Pheng Lau</h4>
                                     <img class="feedbackImg" src="images/feedback/mei_pheng.jpeg" alt="mei pheng feedback" />
                                 </div>
                                 <div class="imgFeed">
                                     <h4>Software Engineer,<br>Jayson Chan Kar Yong</h4>
                                     <img class="feedbackImg" src="images/feedback/jayson.jpeg" alt="mei pheng feedback" />
-                                </div>
-                                <div class="imgFeed">
-                                    <h4>Senior Quality Engineer,<br>Digi Abraham</h4>
-                                    <img class="feedbackImg" src="images/feedback/digi.jpeg" alt="mei pheng feedback" />
                                 </div>
                             </div>
                             <h4>Note: EOL (Exact Online) is one of Exact's product</h4>
@@ -256,6 +257,14 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('top-page').innerHTML = data;
+                    const downloadResumeBtn = document.getElementById('dw-resume-btn');
+                    downloadResumeBtn.addEventListener('click', function(e) {
+                        rippleAnimate(e, downloadResumeBtn);
+                        // Delay the download to allow the ripple to animate
+                        setTimeout(() => {
+                            downloadResume();
+                        }, 990); // Adjust this timeout as needed (100 ms is usually sufficient)
+                    });
                 })
                 .catch(error => console.error('Error loading file:', error));
     
@@ -304,44 +313,30 @@
                 document.body.removeChild(link);
             }
 
-            // Define the media query for min-width: 1440px
-            // const min1440px = window.matchMedia('(min-width: 1440px)');
+            //button view transcript animation
+            const rippleAnimate = (e, btn) => {
+                const ripples = document.createElement('span');
 
-            // // Function to handle the media query change
-            // function handleMediaQueryChange(e) {
-            // if (e.matches) {
-            //     // Screen width is at least 1440px
-            //     console.log('Screen width is at least 1440px');
-            //     // You can add your custom behavior here
-            // } else {
-            //     // Screen width is less than 1440px
-            //     console.log('Screen width is less than 1440px');
-            //     // You can add your custom behavior here
-            // }
-            // }
+                // Set the position of the span element at the click coordinates within the button
+                const buttonRect = btn.getBoundingClientRect();
+                ripples.style.left = (e.clientX - buttonRect.left) + 'px';
+                ripples.style.top = (e.clientY - buttonRect.top) + 'px';
 
-            // // Attach the event listener to the media query
-            // mediaQuery.addEventListener('change', handleMediaQueryChange);
+                // Append the span to the button
+                btn.appendChild(ripples);
 
-            // // Call the function initially to check the current state
-            // handleMediaQueryChange(min1440px);
-
-            // window.onload = footerBannerAnimation();
-
-            // Animation for footer-banner
-            // function footerBannerAnimation(media) {
-            //     const footerBanner = document.getElementById('footer-banner');
-            //     const bannerLength = footerBanner.getBoundingClientRect().width;
-
-            //     footerBanner.animate([
-            //         { width: '0' },
-            //         { width: `${bannerLength}px` }
-            //     ], {
-            //         duration: 4000,
-            //         easing: 'steps(21, start)',
-            //         iterations: Infinity
-            //     });
-            // };
+                setTimeout(() => {
+                    ripples.remove()
+                }, 950);
+            };
+            
+            const viewTranscriptBtn = document.getElementById('hanyang-transcript');
+            viewTranscriptBtn.addEventListener('click', function(e) {
+                rippleAnimate(e, viewTranscriptBtn);
+                setTimeout(() => {
+                    window.open('transcriptHanyang.html', '_blank');
+                }, 950);
+            });
         </script>
     </body>
 </html>
