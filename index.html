@@ -87,7 +87,7 @@
                 <li><a id="edu_page" href="#edu-page">Education</a></li>
                 <li><a id="work_page" href="#work-page">Work Experience</a></li>
                 <li><a id="project_page" href="#project-page">Projects</a></li>
-                <li><a id="activity_page" href="#activity-page">Activities</a></li>
+                <li><a id="activity_page" href="#">Activities</a></li>
             </ul>
             <div class="menuIcon">
                 <img id="menu-icon" onclick="toggleMenu()" src="images/button/menu_icon.svg">
@@ -214,34 +214,35 @@
                         <img src="images/projects/facility_finder.jpg" alt="Facility Finder"/>
                         <div class="projName">
                             <h4>2024<br>Facility Finder</h4>
-                            <a href="">Read more</a>
+                            <!-- <a href="">Read more</a> -->
                         </div>
                     </div>
                     <div class="project">
                         <img src="images/projects/carein.jpg"/>
                         <div class="projName">
                             <h4>2024<br>CareIn</h4>
-                            <a href="">Read more</a>
+                            <!-- <a href="">Read more</a> -->
                         </div>
                     </div>
                     <div class="project">
                         <img src="images/projects/trio.jpg"/>
                         <div class="projName">
                             <h4>2022<br>Order Up</h4>
-                            <a href="">Read more</a>
+                            <!-- <a href="">Read more</a> -->
                         </div>
                     </div>
                     <div class="project">
                         <img id="zero-one-img" src="images/projects/zero_one.jpg"/>
                         <div class="projName">
                             <h4>2020<br>ZeroOne</h4>
-                            <a href="">Read more</a>
+                            <!-- <a href="">Read more</a> -->
                         </div>
                     </div>
                 </div>
+                <br><br>
             </section>
         </div>
-        <div id="activity-page">
+        <!-- <div id="activity-page">
             <section>
                 <br>
                 <br>
@@ -252,7 +253,7 @@
                     
                 </div>
             </section>
-        </div>
+        </div> -->
         <div>
             <div style="display: flex; justify-content: center; padding: 10px 0 10px 0;">
                 <h4 id="footer-banner" >
@@ -311,6 +312,24 @@
                 else {
                     menulist.style.maxHeight = "0px";
                 }
+                const navEdu = document.getElementById('edu_page');
+                const navWork = document.getElementById('work_page');
+                const navProj = document.getElementById('project_page');
+                const navAct = document.getElementById('activity_page');
+
+                navEdu.addEventListener('click', function() {
+                    if(menulist.style.maxHeight = "100%")
+                    menulist.style.maxHeight = "0px";
+                });
+                navWork.addEventListener('click', function() {
+                    menulist.style.maxHeight = "0px";
+                });
+                navProj.addEventListener('click', function() {
+                    menulist.style.maxHeight = "0px";
+                });
+                navAct.addEventListener('click', function() {
+                    menulist.style.maxHeight = "0px";
+                });
             }
 
             // Copy email to clipboard
@@ -361,25 +380,6 @@
                 setTimeout(() => {
                     window.open('transcriptHanyang.html', '_blank');
                 }, 950);
-            });
-
-            const navEdu = document.getElementById('edu_page');
-            const navWork = document.getElementById('work_page');
-            const navProj = document.getElementById('project_page');
-            const navAct = document.getElementById('activity_page');
-            // const navlink = document.getElementById('menulist')
-
-            navEdu.addEventListener('click', function() {
-                menulist.style.maxHeight = "0px";
-            });
-            navWork.addEventListener('click', function() {
-                menulist.style.maxHeight = "0px";
-            });
-            navProj.addEventListener('click', function() {
-                menulist.style.maxHeight = "0px";
-            });
-            navAct.addEventListener('click', function() {
-                menulist.style.maxHeight = "0px";
             });
         </script>
     </body>

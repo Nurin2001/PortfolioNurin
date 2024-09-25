@@ -30,7 +30,8 @@
 }
 .project img {
     width: 100%;
-    transition: tranform 0.5s ease-in;
+    height: 100%;
+    transition: transform 0.5s ease-in;
 }
 .projName {
     position: absolute;
@@ -50,11 +51,10 @@
     padding-bottom: 20px;
     display: none;
     transition: display 0.5s;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 .projName a {
     border-radius: 10px;
-    background-color: white;
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
@@ -79,14 +79,19 @@
         margin: 0;
         height: fit-content;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        padding: 0px 20px 10px 20px;
+        padding: 10px 20px 10px 20px;
         gap: 20px;
         margin-bottom: 10px;
     }
     .project {
         margin-bottom: 0px;
+        width: 100%;
+        height: 500px;
+    }
+    .project img {
+        height: 100%;
     }
     #zero-one-img {
         height: 100%;
@@ -95,17 +100,27 @@
     }
 }
 @media screen and (min-width:1024px) {
+    #project-page section {
+        width: 100vw;
+    }
     #project-page section .container {
-        place-items: center;
-        gap:10;
-        column-gap: 0;
-    } 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-template-columns: 0;
+        grid-template-rows: 0;
+        padding: 0;
+        margin: 0;
+    }
     .project {
-        height: 500px;
+        height: 650px;
+        width: fit-content;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 70%;
+        width: fit-content;
         border-radius: 30px;
         background-color: #FCBC70;
         overflow: hidden;
@@ -115,8 +130,24 @@
     }
 } 
 @media screen and (min-width:1440px) {
+    #project-page section {
+        width: 100vw;
+    }
+    #project-page section .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-template-columns: 0;
+        grid-template-rows: 0;
+        gap: 10px;
+        width: 100%;
+    } 
     .project {
         height: 650px;
-        width: 60%;
+        width: fit-content;
+    }
+    .projName h4 {
+        padding-bottom: 150px;
     }
 }
