@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="styles-edu.css">
         <link rel="stylesheet" href="styles-work.css">
         <link rel="stylesheet" href="styles-project.css">
-        <link rel="stylesheet" href="styles-activity.css">
+        <link rel="stylesheet" href="styles-gallery.css">
         <style>
             footer {
                 background-color: #136A6A;
@@ -82,12 +82,12 @@
     </head>
     <body>
         <nav class="navbar">
-            <h4>Nurinrin.rah</h4>
+            <a href="#top-page" style="font-weight: bolder; font-size: 20px;">Nurinrin.rah</a>
             <ul class="navlinks" id="menulist">
                 <li><a id="edu_page" href="#edu-page">Education</a></li>
                 <li><a id="work_page" href="#work-page">Work Experience</a></li>
                 <li><a id="project_page" href="#project-page">Projects</a></li>
-                <li><a id="activity_page" href="#">Activities</a></li>
+                <li><a id="activity_page" href="#gallery-page">Gallery</a></li>
             </ul>
             <div class="menuIcon">
                 <img id="menu-icon" onclick="toggleMenu()" src="images/button/menu_icon.svg">
@@ -98,6 +98,7 @@
         <div id="edu-page">
             <section class="educationSection">
                 <div class="containerEdu">
+                    <br><br>
                     <br><br>
                     <h3>Education</h3>
                     <br><br>
@@ -151,6 +152,7 @@
         <div id="work-page">
             <section class="workSection">
                 <div class="container">
+                    <br><br>
                     <h3 class="workTitle">Work Experience</h3>
                     <br>
                     <div class="workContainer">
@@ -207,6 +209,7 @@
         <div id="project-page">
             <section>
                 <br><br>
+                <br><br>
                 <h3>Projects</h3>
                 <br><br>
                 <div class="container">
@@ -242,18 +245,8 @@
                 <br><br>
             </section>
         </div>
-        <!-- <div id="activity-page">
-            <section>
-                <br>
-                <br>
-                <br>
-                <h3>Activities</h3>
-                <br>
-                <div class="container">
-                    
-                </div>
-            </section>
-        </div> -->
+        <div id="gallery-page">
+        </div>
         <div>
             <div style="display: flex; justify-content: center; padding: 10px 0 10px 0;">
                 <h4 id="footer-banner" >
@@ -269,118 +262,7 @@
                 </a>
             </footer>
         </div>
-        <script>
-            // Load external HTML content
-            fetch('home2.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('top-page').innerHTML = data;
-                    const downloadResumeBtn = document.getElementById('dw-resume-btn');
-                    downloadResumeBtn.addEventListener('click', function(e) {
-                        rippleAnimate(e, downloadResumeBtn);
-                        // Delay the download to allow the ripple to animate
-                        setTimeout(() => {
-                            downloadResume();
-                        }, 990); // Adjust this timeout as needed (100 ms is usually sufficient)
-                    });
-                })
-                .catch(error => console.error('Error loading file:', error));
-        
-            let menulist = document.getElementById('menulist');
-            function setMenulink() {
-                const menuIcon = document.getElementById('menu-icon');
-                const style = window.getComputedStyle(menuIcon);
-                    
-                if(style.display === 'block')
-                    menulist.style.maxHeight = "0px";
-                else
-                    menulist.style.maxHeight = "100%";
-            }
-            window.onload = function() {
-                // setMenulink();
-            }
-            window.addEventListener('resize', function() {
-                // setMenulink();
-                }
-            );
-
-            function toggleMenu() {
-                if(menulist.style.maxHeight == "0px" || menulist.style.display == 'none') {
-                    menulist.style.maxHeight = "300px";
-                    menulist.style.display = 'block';
-                }
-                else {
-                    menulist.style.maxHeight = "0px";
-                }
-                const navEdu = document.getElementById('edu_page');
-                const navWork = document.getElementById('work_page');
-                const navProj = document.getElementById('project_page');
-                const navAct = document.getElementById('activity_page');
-
-                navEdu.addEventListener('click', function() {
-                    if(menulist.style.maxHeight = "100%")
-                    menulist.style.maxHeight = "0px";
-                });
-                navWork.addEventListener('click', function() {
-                    menulist.style.maxHeight = "0px";
-                });
-                navProj.addEventListener('click', function() {
-                    menulist.style.maxHeight = "0px";
-                });
-                navAct.addEventListener('click', function() {
-                    menulist.style.maxHeight = "0px";
-                });
-            }
-
-            // Copy email to clipboard
-            function copyEmail() {
-                const tempTextArea = document.createElement("textarea");
-                tempTextArea.value = "maisarahnurin38@gmail.com";
-                document.body.appendChild(tempTextArea);
-
-                tempTextArea.select();
-                document.execCommand("copy");
-
-                document.body.removeChild(tempTextArea);
-
-                alert("My email is copied to your clipboard");
-            }
-
-            // Download resume
-            function downloadResume() {
-                const link = document.createElement('a');
-                link.href = 'downloads/nurin-maisarah-resume.pdf';
-                link.download = 'nurin-maisarah-resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                alert("My resume is downloaded");
-                document.body.removeChild(link);
-            }
-
-            //button view transcript animation
-            const rippleAnimate = (e, btn) => {
-                const ripples = document.createElement('span');
-
-                // Set the position of the span element at the click coordinates within the button
-                const buttonRect = btn.getBoundingClientRect();
-                ripples.style.left = (e.clientX - buttonRect.left) + 'px';
-                ripples.style.top = (e.clientY - buttonRect.top) + 'px';
-
-                // Append the span to the button
-                btn.appendChild(ripples);
-
-                setTimeout(() => {
-                    ripples.remove()
-                }, 950);
-            };
-            
-            const viewTranscriptBtn = document.getElementById('hanyang-transcript');
-            viewTranscriptBtn.addEventListener('click', function(e) {
-                rippleAnimate(e, viewTranscriptBtn);
-                setTimeout(() => {
-                    window.open('transcriptHanyang.html', '_blank');
-                }, 950);
-            });
+        <script src="scripts.js">
         </script>
     </body>
 </html>

@@ -1,0 +1,17 @@
+{
+    "name": "acer/portfolio",
+    "description": "Online portfolio",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Acer\\Portfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nurin Maisarah"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
